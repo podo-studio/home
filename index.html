@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포도 스튜디오</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+	header {
+		background-color: white; /* 배경 흰색으로 변경 */
+		padding: 40px 20px; /* 위아래 여백 증가 */
+		text-align: center;
+	}
+	header img {
+		max-width: 250px; /* 기존 150px → 250px */
+		height: auto;
+	}
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #8e24aa;
+        }
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button.active {
+            border-bottom: 3px solid #ffeb3b;
+        }
+        .tab-content {
+            display: none;
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .card p {
+            font-size: 14px;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #6a1b9a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .card a:hover {
+            background-color: #4a148c;
+        }
+        footer {
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="emblem.png" alt="포도 스튜디오 엠블럼">
+    </header>
+
+    <nav>
+        <button class="tab-btn active" data-tab="games">게임</button>
+        <button class="tab-btn" data-tab="novels">소설</button>
+        <button class="tab-btn" data-tab="programs">프로그램</button>
+    </nav>
+
+    <section id="games" class="tab-content active">
+        <div class="card-container">
+            <div class="card">
+                <h3>양치기 소년</h3>
+                <p>울타리를 설치하며 농장을 지키는 전략 시뮬레이션 게임.</p>
+                <a href="https://podo-studio.github.io/FenceKeeper/" target="_blank">플레이하기</a>
+            </div>
+            <div class="card">
+                <h3>천라지망</h3>
+                <p>100마리의 참새를 천라지망으로 가둬라.</p>
+                <a href="https://podo-studio.github.io/cheonlajimang/" target="_blank">플레이하기</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="novels" class="tab-content">
+        <div class="card-container">
+            <div class="card">
+                <h3>예시 소설</h3>
+                <p>여기에 소설을 소개하는 내용 작성</p>
+                <a href="#">읽기</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="tab-content">
+        <div class="card-container">
+            <div class="card">
+                <h3>냉장고 정리 프로그램</h3>
+                <p>냉장고 속 재료를 쉽게 관리할 수 있는 간단한 프로그램.</p>
+                <a href="#">GitHub 링크</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 포도 스튜디오 | <a href="https://github.com/podo-studio" style="color:white;">GitHub</a>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                contents.forEach(c => c.classList.remove('active'));
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
