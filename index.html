@@ -1,181 +1,166 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포도 스튜디오</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-	header {
-		background-color: white; /* 배경 흰색으로 변경 */
-		padding: 40px 20px; /* 위아래 여백 증가 */
-		text-align: center;
-	}
-	header img {
-		max-width: 250px; /* 기존 150px → 250px */
-		height: auto;
-	}
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #8e24aa;
-        }
-        nav button {
-            background: none;
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        nav button.active {
-            border-bottom: 3px solid #ffeb3b;
-        }
-        .tab-content {
-            display: none;
-            padding: 30px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            width: 250px;
-            padding: 20px;
-            text-align: center;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .card p {
-            font-size: 14px;
-        }
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #6a1b9a;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .card a:hover {
-            background-color: #4a148c;
-        }
-        footer {
-            background-color: #6a1b9a;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 50px;
-        }
-    </style>
+    <title>PODO STUDIO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <img src="emblem.png" alt="포도 스튜디오 엠블럼">
-    </header>
 
-    <nav>
-        <button class="tab-btn active" data-tab="games">게임</button>
-        <button class="tab-btn" data-tab="novels">소설</button>
-        <button class="tab-btn" data-tab="programs">프로그램</button>
-    </nav>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo-text">PODO STUDIO</div>
+                <div class="header-controls">
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="ko">KO</button>
+                        <span class="separator">/</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <div class="date-display" id="currentDate">2025</div>
+                </div>
+            </div>
 
-    <section id="games" class="tab-content active">
-        <div class="card-container">
-            <div class="card">
-                <h3>양치기 소년</h3>
-                <p>평화로운 초원에서 양무리를 돌보는 양치기가 되어 보세요.(PC 플레이에 최적화 되어 있습니다.)</p>
-                <a href="https://podo-studio.github.io/FenceKeeper/">플레이하기</a>
+            <div class="hero-main">
+                <h1 class="hero-title">DIGITAL<br>VINEYARD</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">우리는 정교함과 열정으로 디지털 경험을 경작합니다. 단순함에 뿌리를 둔 혁신.</p>
             </div>
-            <div class="card">
-                <h3>천라지망</h3>
-                <p>무협의 전설, 『신조협려』 속에서 양과가 익힌 절기, 천라지망을 이제 직접 체험하세요.</p>
-                <a href="https://podo-studio.github.io/cheonlajimang/">플레이하기</a>
-            </div>
-			<div class="card">
-                <h3>양치기 소년:은둔고수</h3>
-                <p>평화로운 들판의 양치기 소년, 하지만 그는 사실 은둔고수였다.(PC 플레이에 최적화 되어 있습니다.)</p>
-                <a href="https://podo-studio.github.io/GosuFenceKeeper/">플레이하기</a>
-            </div>
-			<div class="card">
-                <h3>구피 연구소</h3>
-                <p>나만의 특별한 구피를 만들어보세요!(PC 플레이에 최적화 되어 있습니다.)</p>
-                <a href="https://podo-studio.github.io/GuppyLab/">플레이하기</a>
-            </div>
-			<!-- 주석처리 -->
-			<!--div class="card">
-                <h3>나만의 작은 테라리움</h3>
-                <p>나만의 특별한 유리정원을 꾸며보세요.</p>
-                <a href="https://podo-studio.github.io/MyLittleTerrarium/">플레이하기</a>
-            </div-->
-			<div class="card">
-                <h3>슬라이드 퍼즐</h3>
-                <p>내 사진으로 슬라이드 퍼즐을 즐기세요.</p>
-                <a href="https://podo-studio.github.io/mySlidePuzzle/">플레이하기</a>
-            </div>
-        </div>
-    </section>
 
-    <section id="novels" class="tab-content">
-        <div class="card-container">
-            <div class="card">
-                <h3>(화성 행정관)</h3>
-                <p>범죄자들을 유배시킨 화성 식민지,  AI 행정관의 '효율적'이고 '합리적'인 통치에 반기를 드는 인간들. 무엇이 최선인가?</p>
-                <a href="#">준비중입니다.</a>
-            </div>
-        </div>
-    </section>
+            <div class="scroll-indicator" data-i18n="scroll_indicator">스크롤하여 탐험하기</div>
+        </header>
 
-    <section id="programs" class="tab-content">
-        <div class="card-container">
-            <div class="card">
-                <h3>스마트 냉장고</h3>
-                <p>냉장고 속 재료를 쉽게 관리할 수 있는 간단한 프로그램.</p>
-                <a href="https://podo-studio.github.io/FridgeMate/">냉장고 열기</a>
-            </div>
- <!-- 에셋(자산 그래프) 카드 추가 부분 -->
-            <div class="card">
-                <h3>자산 그래프 도구</h3>
-                <p>월별·연도별 자산 변화를 한눈에 확인할 수 있는 간단한 웹 자산 대시보드.</p>
-                <a href="https://podo-studio.github.io/Asset/">그래프 열기</a>
-            </div>
-        </div>
-    </section>
+        <nav class="filter-nav">
+            <ul class="filter-list">
+                <li><button class="filter-btn active" data-filter="all" data-i18n="filter_all">전체</button></li>
+                <li><button class="filter-btn" data-filter="game" data-i18n="filter_games">게임</button></li>
+                <li><button class="filter-btn" data-filter="novel" data-i18n="filter_novels">소설</button></li>
+                <li><button class="filter-btn" data-filter="app" data-i18n="filter_apps">앱</button></li>
+            </ul>
+        </nav>
 
-    <footer>
-        &copy; 2025 포도 스튜디오 | <a href="https://github.com/podo-studio" style="color:white;">GitHub</a>
-    </footer>
+        <main class="project-list">
+            <!-- Game: Fence Keeper -->
+            <article class="project-item" data-category="game">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_game">게임</span>
+                    <h2 class="project-title" data-i18n="title_fencekeeper">양치기 소년</h2>
+                    <p class="project-desc" data-i18n="desc_fencekeeper">평화로운 초원에서 양무리를 돌보는 힐링 시뮬레이션. (PC 최적화)</p>
+                    <a href="https://podo-studio.github.io/FenceKeeper/" target="_blank" class="project-link"
+                        data-i18n="btn_launch">프로젝트 실행</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/fence_keeper.png" alt="Fence Keeper">
+                </div>
+            </article>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.tab-content');
+            <!-- Game: Cheonlajimang -->
+            <article class="project-item" data-category="game">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_game">게임</span>
+                    <h2 class="project-title" data-i18n="title_cheonlajimang">천라지망</h2>
+                    <p class="project-desc" data-i18n="desc_cheonlajimang">무협의 전설, 『신조협려』 속 양과의 절기 '천라지망'을 직접 체험하세요.</p>
+                    <a href="https://podo-studio.github.io/cheonlajimang/" target="_blank" class="project-link"
+                        data-i18n="btn_launch">프로젝트 실행</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/cheonlajimang.png" alt="Cheonlajimang">
+                </div>
+            </article>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+            <!-- Game: Gosu Fence Keeper -->
+            <article class="project-item" data-category="game">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_game">게임</span>
+                    <h2 class="project-title" data-i18n="title_gosu">양치기 소년: 은둔고수</h2>
+                    <p class="project-desc" data-i18n="desc_gosu">평범해 보이는 양치기 소년, 사실은 무림의 은둔고수였다?</p>
+                    <a href="https://podo-studio.github.io/GosuFenceKeeper/" target="_blank" class="project-link"
+                        data-i18n="btn_launch">프로젝트 실행</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/gosu_shepherd.png" alt="Gosu Shepherd">
+                </div>
+            </article>
 
-                contents.forEach(c => c.classList.remove('active'));
-                document.getElementById(tab.dataset.tab).classList.add('active');
-            });
-        });
-    </script>
+            <!-- Game: Guppy Lab -->
+            <article class="project-item" data-category="game">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_game">게임</span>
+                    <h2 class="project-title" data-i18n="title_guppy">구피 연구소</h2>
+                    <p class="project-desc" data-i18n="desc_guppy">나만의 특별한 구피를 개량하고 키워보세요! (PC 최적화)</p>
+                    <a href="https://podo-studio.github.io/GuppyLab/" target="_blank" class="project-link"
+                        data-i18n="btn_launch">프로젝트 실행</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/guppy_lab.png" alt="Guppy Lab">
+                </div>
+            </article>
+
+            <!-- Game: Slide Puzzle -->
+            <article class="project-item" data-category="game">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_game">게임</span>
+                    <h2 class="project-title" data-i18n="title_slide">슬라이드 퍼즐</h2>
+                    <p class="project-desc" data-i18n="desc_slide">내 사진으로 즐기는 커스텀 슬라이드 퍼즐 게임.</p>
+                    <a href="https://podo-studio.github.io/mySlidePuzzle/" target="_blank" class="project-link"
+                        data-i18n="btn_launch">프로젝트 실행</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/slide_puzzle.png" alt="Slide Puzzle">
+                </div>
+            </article>
+
+            <!-- Novel: Mars Admin -->
+            <article class="project-item" data-category="novel">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_novel">소설</span>
+                    <h2 class="project-title" data-i18n="title_mars">(화성 행정관)</h2>
+                    <p class="project-desc" data-i18n="desc_mars">화성 식민지의 AI 행정관과 이에 맞서는 인간들의 이야기. 무엇이 진정한 최선인가?</p>
+                    <a href="#" class="project-link" style="opacity: 0.5; cursor: default;" data-i18n="btn_soon">준비중</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/mars_admin.png" alt="Mars Administrator">
+                </div>
+            </article>
+
+            <!-- App: Fridge Mate -->
+            <article class="project-item" data-category="app">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_app">앱</span>
+                    <h2 class="project-title" data-i18n="title_fridge">스마트 냉장고</h2>
+                    <p class="project-desc" data-i18n="desc_fridge">냉장고 속 재료를 효율적으로 관리하는 스마트 키친 도구.</p>
+                    <a href="https://podo-studio.github.io/FridgeMate/" target="_blank" class="project-link"
+                        data-i18n="btn_open">앱 열기</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/fridge_mate.png" alt="Fridge Mate">
+                </div>
+            </article>
+
+            <!-- App: Asset Graph -->
+            <article class="project-item" data-category="app">
+                <div class="project-meta">
+                    <span class="project-category" data-i18n="cat_app">앱</span>
+                    <h2 class="project-title" data-i18n="title_asset">자산 그래프</h2>
+                    <p class="project-desc" data-i18n="desc_asset">월별·연도별 자산 변화를 시각화하여 보여주는 대시보드.</p>
+                    <a href="https://podo-studio.github.io/Asset/" target="_blank" class="project-link"
+                        data-i18n="btn_open">앱 열기</a>
+                </div>
+                <div class="project-image">
+                    <img src="images/slide_puzzle.png" alt="Asset Graph" style="filter: hue-rotate(180deg);">
+                </div>
+            </article>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 PODO STUDIO. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
