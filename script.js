@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title_gosu: "양치기 소년: 은둔고수",
             desc_gosu: "평범해 보이는 양치기 소년, 사실은 무림의 은둔고수였다?",
             title_guppy: "구피 연구소",
-            desc_guppy: "나만의 특별한 구피를 개량하고 키워보세요! (PC 최적화)",
+            desc_guppy: "나만의 특별한 구피를 개량하고 키워보세요!",
             title_slide: "슬라이드 퍼즐",
             desc_slide: "내 사진으로 즐기는 커스텀 슬라이드 퍼즐 게임.",
             title_mars: "(화성 행정관)",
